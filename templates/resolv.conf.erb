@@ -1,6 +1,11 @@
-# This file is managed by Puppet, do not edit
+<% if !header.empty? -%>
+# <%= header %>
+<% end -%>
 <% if !search.empty? -%>
 search <%= search.join(' ') %>
+<% end -%>
+<% if !domain.empty? -%>
+domain <%= domain %>
 <% end -%>
 <% if !options.empty? -%>
 options <%= options.join(' ') %>

@@ -1,5 +1,5 @@
 name 'thias-resolvconf'
-version '0.0.1'
+version '0.0.2'
 source 'git://github.com/thias/puppet-resolvconf'
 author 'Matthias Saou'
 license 'Apache 2.0'

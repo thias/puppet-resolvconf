@@ -21,6 +21,7 @@ In `hieradata` somewhere :
     ---
     classes:
       - '::resolvconf'
+    resolvconf::header: ''
     resolvconf::nameserver:
       - '198.51.100.1'
       - '198.51.100.2'

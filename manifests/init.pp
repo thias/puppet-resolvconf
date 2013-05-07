@@ -5,6 +5,8 @@
 # Parameters:
 #  $nameserver:
 #    Array of nameservers. Default: empty
+#  $domain:
+#    Domain name. Default: empty
 #  $search:
 #    Array of search domains. Default: empty
 #  $options:
@@ -17,10 +19,16 @@
 #  }
 #
 class resolvconf (
+  $header     = 'This file is managed by Puppet, do not edit',
   $nameserver = [],
+  $domain     = '',
   $search     = [],
   $options    = []
 ) {
+
+  if $domain != '' and $search != [] {
+    fail('The "domain" and "search" parameters are mutually exclusive.')
+  }
 
   if $nameserver != [] {
     file { '/etc/resolv.conf':

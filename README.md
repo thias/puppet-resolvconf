@@ -8,7 +8,7 @@ Manage /etc/resolv.conf with puppet.
 
 The idea is to be able to globally include the `resolvconf` class on all nodes.
 From there, hiera with puppet 3.x allows to start managing the
-`/etc/resolv.conv` file's content in a very flexible way.
+`/etc/resolv.conf` file's content in a very flexible way.
 
 ## Examples
 

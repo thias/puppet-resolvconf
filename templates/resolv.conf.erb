@@ -1,0 +1,10 @@
+# This file is managed by Puppet, do not edit
+<% if !search.empty? -%>
+search <%= search.join(' ') %>
+<% end -%>
+<% if !options.empty? -%>
+options <%= options.join(' ') %>
+<% end -%>
+<% nameserver.each do |ns| -%>
+nameserver <%= ns %>
+<% end -%>

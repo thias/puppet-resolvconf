@@ -1,15 +1,15 @@
-<% if !header.empty? -%>
-# <%= header %>
+<% if !@header.empty? -%>
+# <%= @header %>
 <% end -%>
-<% if !search.empty? -%>
-search <%= search.join(' ') %>
+<% if !@search.empty? -%>
+search <%= @search.join(' ') %>
 <% end -%>
-<% if !domain.empty? -%>
-domain <%= domain %>
+<% if !@domain.empty? -%>
+domain <%= @domain %>
 <% end -%>
-<% if !options.empty? -%>
-options <%= options.join(' ') %>
+<% if !@options.empty? -%>
+options <%= @options.join(' ') %>
 <% end -%>
-<% nameserver.each do |ns| -%>
+<% @nameserver.each do |ns| -%>
 nameserver <%= ns %>
 <% end -%>

@@ -23,7 +23,8 @@ class resolvconf (
   $nameserver = [],
   $domain     = '',
   $search     = [],
-  $options    = []
+  $options    = [],
+  $file       = '/etc/resolv.conf',
 ) {
 
   if $domain != '' and $search != [] {
@@ -31,7 +32,7 @@ class resolvconf (
   }
 
   if $nameserver != [] {
-    file { '/etc/resolv.conf':
+    file { $file:
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
@@ -41,3 +42,21 @@ class resolvconf (
 
 }
 
+class resolvconf::tail (
+  $header     = 'This file is managed by Puppet, do not edit',
+  $nameserver = [],
+  $domain     = '',
+  $search     = [],
+  $options    = [],
+) {
+
+  class { 'resolvconf':
+    header     => $header,
+    nameserver => $nameserver,
+    domain     => $domain,
+    search     => $search,
+    options    => $options,
+    file       => '/etc/resolvconf/resolv.conf.d/tail',
+  }
+
+}

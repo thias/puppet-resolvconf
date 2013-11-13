@@ -18,12 +18,13 @@
 #    search     => [ 'example.lan', 'example.com' ],
 #  }
 #
-class resolvconf (
+define resolvconf::file (
   $header     = 'This file is managed by Puppet, do not edit',
   $nameserver = [],
   $domain     = '',
   $search     = [],
-  $options    = []
+  $options    = [],
+  $file       = $name,
 ) {
 
   if $domain != '' and $search != [] {
@@ -31,7 +32,7 @@ class resolvconf (
   }
 
   if $nameserver != [] {
-    file { '/etc/resolv.conf':
+    file { $file:
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
@@ -41,3 +42,22 @@ class resolvconf (
 
 }
 
+class resolvconf (
+  $header     = 'This file is managed by Puppet, do not edit',
+  $nameserver = [],
+  $domain     = '',
+  $search     = [],
+  $options    = [],
+) {
+
+  $file = '/etc/resolv.conf'
+
+  resolvconf::file { $file:
+    header     => $header,
+    nameserver => $nameserver,
+    domain     => $domain,
+    search     => $search,
+    options    => $options,
+  }
+
+}

@@ -21,6 +21,7 @@
 #  }
 #
 define resolvconf::file (
+  $ensure     = present,
   $header     = 'This file is managed by Puppet, do not edit',
   $nameserver = [],
   $domain     = '',
@@ -35,6 +36,7 @@ define resolvconf::file (
 
   if $nameserver != [] {
     file { $title:
+      ensure  => $ensure,
       owner   => 'root',
       group   => 'root',
       mode    => '0644',

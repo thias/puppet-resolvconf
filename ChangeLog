@@ -1,3 +1,6 @@
+* Create new file definition to manage Ubuntu resolv.conf.d files (#2).
+* Add support for sortlist parameter.
+
 2013-07-17 - 0.0.3
 * Add missing @ prefix for variables in the template.
 

@@ -2,15 +2,7 @@
 #
 # Manage /etc/resolv.conf with puppet. See resolv.conf(5).
 #
-# Parameters:
-#  $nameserver:
-#    Array of nameservers. Default: empty
-#  $domain:
-#    Domain name. Default: empty
-#  $search:
-#    Array of search domains. Default: empty
-#  $options:
-#    Array of options. Default: empty
+# This class is just a wrapper around resolvconf::file for the main file.
 #
 # Sample Usage :
 #  class { 'resolvconf':
@@ -23,20 +15,17 @@ class resolvconf (
   $nameserver = [],
   $domain     = '',
   $search     = [],
-  $options    = []
+  $sortlist   = [],
+  $options    = [],
 ) {
 
-  if $domain != '' and $search != [] {
-    fail('The "domain" and "search" parameters are mutually exclusive.')
-  }
-
-  if $nameserver != [] {
-    file { '/etc/resolv.conf':
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0644',
-      content => template("${module_name}/resolv.conf.erb"),
-    }
+  resolvconf::file { '/etc/resolv.conf':
+    header     => $header,
+    nameserver => $nameserver,
+    domain     => $domain,
+    search     => $search,
+    sortlist   => $sortlist,
+    options    => $options,
   }
 
 }

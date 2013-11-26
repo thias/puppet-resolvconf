@@ -13,3 +13,6 @@ options <%= @options.join(' ') %>
 <% @nameserver.each do |ns| -%>
 nameserver <%= ns %>
 <% end -%>
+<% if !@sortlist.empty? -%>
+sortlist <%= @sortlist.join(' ') %>
+<% end -%>

@@ -70,7 +70,8 @@
 #
 # === Authors
 #
-# Josh Preston <JoshPreston@dswinc.com>
+# Matthias Saou
+# Josh Preston
 #
 class resolvconf (
   $hiera_search    = false,  # Backwards compatibility

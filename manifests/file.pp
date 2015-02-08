@@ -72,7 +72,8 @@
 #
 # === Authors
 #
-# Josh Preston <JoshPreston@dswinc.com>
+# Matthias Saou
+# Josh Preston
 #
 define resolvconf::file (
   $owning_user,

@@ -1,0 +1,3 @@
+# We are going to ignore these directories as they shouldn't end up on github.
+pkg/
+.project

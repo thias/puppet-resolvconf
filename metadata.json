@@ -1,0 +1,34 @@
+{
+  "name": "thias-resolvconf",
+  "version": "0.1.0",
+  "author": "Matthias Saou",
+  "summary": "/etc/resolv.conf module",
+  "license": "Apache-2.0",
+  "source": "git://github.com/thias/puppet-resolvconf",
+  "project_page": "https://github.com/thias/puppet-resolvconf",
+  "issues_url": "https://github.com/thias/puppet-resolvconf/issues",
+  "tags": [ "resolv", "resolvconf", "resolv.conf", "dns" ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "AIX"
+    },{
+      "operatingsystem": "CentOS"
+    },{
+      "operatingsystem": "Debian"
+    },{
+      "operatingsystem": "RedHat"
+    },{
+      "operatingsystem": "Ubuntu"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ]
+}

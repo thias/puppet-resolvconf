@@ -3,6 +3,8 @@
 <% end -%>
 <% if !@search.empty? -%>
 search <%= @search.join(' ') %>
+<% elsif !@domain.empty? -%>
+search <%= @domain %>
 <% end -%>
 <% if !@domain.empty? -%>
 domain <%= @domain %>

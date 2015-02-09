@@ -17,6 +17,7 @@ class resolvconf (
   $search     = [],
   $sortlist   = [],
   $options    = [],
+  $force      = false,
 ) {
 
   resolvconf::file { '/etc/resolv.conf':
@@ -26,6 +27,7 @@ class resolvconf (
     search     => $search,
     sortlist   => $sortlist,
     options    => $options,
+    force      => $force,
   }
 
 }

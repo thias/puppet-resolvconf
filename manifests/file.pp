@@ -28,6 +28,7 @@ define resolvconf::file (
   $search     = [],
   $sortlist   = [],
   $options    = [],
+  $force      = false,
 ) {
 
   if $domain != '' and $search != [] {
@@ -40,6 +41,7 @@ define resolvconf::file (
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
+      force   => $force,
       content => template("${module_name}/resolv.conf.erb"),
     }
   }

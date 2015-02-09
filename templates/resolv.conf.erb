@@ -1,13 +1,13 @@
 <% if !@header.empty? -%>
 # <%= @header %>
 <% end -%>
+<% if !@domain.empty? -%>
+domain <%= @domain %>
+<% end -%>
 <% if !@search.empty? -%>
 search <%= @search.join(' ') %>
 <% elsif !@exclusive and !@domain.empty? -%>
 search <%= @domain %>
-<% end -%>
-<% if !@domain.empty? -%>
-domain <%= @domain %>
 <% end -%>
 <% if !@options.empty? -%>
 options <%= @options.join(' ') %>

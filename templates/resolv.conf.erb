@@ -4,7 +4,7 @@
 <% if !@domain.empty? -%>
 domain <%= @domain %>
 <% end -%>
-<% if !@search.empty? -%>
+<% if @exclusive and @domain.empty? and !@search.empty? -%>
 search <%= @search.join(' ') %>
 <% elsif !@exclusive and !@domain.empty? -%>
 search <%= @domain %>

@@ -1,3 +1,11 @@
+2015-02-08 - 0.1.0
+* Added support for AIX
+* Corrected verbiage from nameserver to nameservers
+* Updated documentation
+* Added exclusive check for search + domain
+* Added hiera lookups for search domains (will mash)
+
+2015-01-01 - 0.0.4
 * Create new file definition to manage Ubuntu resolv.conf.d files (#2).
 * Add support for sortlist parameter.
 
